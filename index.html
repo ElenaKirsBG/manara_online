@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#241827">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <title>Манара — дневник раскладов</title>
+</head>
+<body>
+  <header class="topbar"><div><p class="eyebrow">ОФЛАЙН СПРАВОЧНИК</p><h1>Манара</h1></div><button id="tab-draw" class="icon-button" aria-label="Перейти к раскладу">✦</button></header>
+  <main>
+    <nav class="tabs" aria-label="Разделы"><button class="tab active" data-view="draw">Расклад</button><button class="tab" data-view="catalog">Карты</button><button class="tab" data-view="history">История</button></nav>
+    <section id="view-draw" class="view">
+      <div class="intro"><p class="eyebrow">ОФЛАЙН РАСКЛАД</p><h2>Исследуйте ситуацию</h2><p>Выберите расклад и вопрос, затем вытяните карты.</p></div><label class="field-label" for="spread">Тип расклада</label><select id="spread" class="search"><option value="daily">Карта дня · 1 карта</option><option value="relationship">Динамика отношений · 3 карты</option><option value="choice">Выбор · 3 карты</option><option value="obstacle">Что мешает сближению · 4 карты</option></select>
+      <label class="field-label" for="context">Жизненная ситуация</label><select id="context" class="search"><option value="existing_relationship">Существующие отношения</option><option value="new_relationship">Новое знакомство</option><option value="separation_or_ex">Расставание или бывший партнёр</option><option value="work_and_study">Работа и учёба</option><option value="family">Семья</option><option value="self_development">Личное развитие</option><option value="choice">Принятие решения</option></select><label class="field-label" for="question">Ваш вопрос</label><textarea id="question" rows="3" placeholder="Например: что важно понять о наших отношениях?"></textarea>
+      <button id="draw-button" class="primary">Вытянуть карты</button>
+      <div id="reading" class="reading" aria-live="polite"></div>
+      <p class="note">Трактовки карт — способ для размышления, не подтверждённые факты о другом человеке.</p>
+    </section>
+    <section id="view-catalog" class="view hidden">
+      <div class="intro"><p class="eyebrow">78 КАРТ</p><h2>Каталог</h2><p>Найдите карту по названию или масти.</p></div>
+      <input id="search" class="search" type="search" placeholder="Поиск по картам" aria-label="Поиск по картам">
+      <div class="filters"><button class="filter active" data-filter="all">Все</button><button class="filter" data-filter="major">Старшие</button><button class="filter" data-filter="fire">Огонь</button><button class="filter" data-filter="water">Вода</button><button class="filter" data-filter="air">Воздух</button><button class="filter" data-filter="earth">Земля</button></div>
+      <div id="card-list" class="card-list"></div>
+    </section>
+    <section id="view-history" class="view hidden">
+      <div class="intro"><p class="eyebrow">НА ЭТОМ УСТРОЙСТВЕ</p><h2>История раскладов</h2><p>Расклады сохраняются локально в браузере.</p></div>
+      <div id="history-list" class="history-list"></div>
+      <button id="clear-history" class="secondary">Очистить историю</button>
+    </section>
+  </main>
+  <footer>Манара · версия прототипа 0.1</footer><dialog id="card-dialog" class="card-dialog"><button id="close-card" class="dialog-close" aria-label="Закрыть">×</button><div id="card-detail"></div></dialog>
+  <script src="cards-bundle.js"></script><script src="app.js"></script><script src="cards-study.js"></script>
+</body>
+</html>
+
+
+
+
